@@ -42,7 +42,7 @@ function Login() {
         upnameinput('')
         upemailinput('')
         uppassinput('')
-        navigate('/movies')
+        window.open('https://hoblist.com/movieList')
     }
     return (
         <div>
