@@ -19,7 +19,7 @@ function Login() {
         users.map((item)=>{
             if(item.name===nameinput&&item.email===emailinput&&item.pass===passinput){
                 count+=1;
-                navigate('/movies')
+                window.open('https://hoblist.com/movieList')
             }
         })
         if(count===0){
@@ -52,14 +52,26 @@ function Login() {
                     <input value={nameinput} onChange={(e)=>upnameinput(e.target.value)} type="text" class="form-control"  placeholder="Enter your name" />
                 </div>
                 <div class="form-group">
+                    <label>Password</label>
+                    <input value={passinput} onChange={(e)=>uppassinput(e.target.value)} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input value={emailinput} onChange={(e)=>upemailinput(e.target.value)} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input value={passinput} onChange={(e)=>uppassinput(e.target.value)} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                    <label>Phone number</label>
+                    <input type="number" class="form-control"   placeholder="Phone number" />
                 </div>
+                <div class="form-group" >
+                    <label style={{paddingRight:10}}>Profession</label>
+                    <select style={{outlineStyle:'none',border:'none',height:'30px'}}>
+                        <option>front end developer</option>
+                        <option>back end developer</option>
+                        <option>full stack developer</option>
+                    </select>
+                </div>  
                 <div style={{marginTop:'3%',marginBottom:'2%',color:'red'}}>{error ?'incorrect username and password':'' }</div>
                 <div style={{marginTop:'3%',marginBottom:'2%',color:'red'}}>{boolean ?'please fill the all feild':'' }</div>
                 <button onClick={()=>signin()} type="button"  class="btn btn-primary" style={{marginRight:'3%'}}>Signin</button>
